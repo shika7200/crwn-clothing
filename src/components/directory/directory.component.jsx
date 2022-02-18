@@ -47,8 +47,8 @@ this.state  = {
       return(
     <div className='directory-menu'>
         {
-            this.state.section.map(({title,imageUrl,size,id}) => (
-                <MenuItem key={id} title={title} imageUrl={imageUrl}  size={size} />
+            this.state.section.map(({id, ...otherSectionProps}) => (
+                <MenuItem key={id} {...otherSectionProps} />
             ))
         }
     </div>
