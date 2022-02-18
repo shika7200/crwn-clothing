@@ -1,17 +1,13 @@
 import React from 'react';
 import './menu-item.styles.scss'
-import { useLocation } from 'react-router';
-const withRouter = WrappedComponent => props => {
-    const location = useLocation();
-  
-     return <WrappedComponent {...props} location={location} />;
-   };
+import { Link } from 'react-router-dom';
 
 
-const MenuItem = ({title, imageUrl, size, history, linkUrl, match }) => (
-
+const MenuItem = ({title, imageUrl, size, linkUrl}) => {
+return(
+    <Link to={linkUrl} >
     <div
-    className={`${size} menu-item`} onClick={()=> history.push(`${match.url}${linkUrl}`)}>
+    className={`${size} menu-item`} >
         <div  className='background-image'
         style={{
             backgroundImage: `url(${imageUrl})`
@@ -21,6 +17,9 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match }) => (
 <span className='subtitle'> SHOP NOW</span>
 </div>
     </div>
-);
+    </ Link>
+)
+    };
+    
 
-export default withRouter(MenuItem);
+export default MenuItem;
