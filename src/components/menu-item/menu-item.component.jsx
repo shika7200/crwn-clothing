@@ -1,5 +1,12 @@
 import React from 'react';
 import './menu-item.styles.scss'
+import { useLocation } from 'react-router';
+const withRouter = WrappedComponent => props => {
+    const location = useLocation();
+  
+     return <WrappedComponent {...props} location={location} />;
+   };
+
 
 const MenuItem = ({title, imageUrl, size }) => (
 
@@ -16,4 +23,4 @@ const MenuItem = ({title, imageUrl, size }) => (
     </div>
 );
 
-export default MenuItem;
+export default withRouter(MenuItem);
