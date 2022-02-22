@@ -55,13 +55,16 @@ render(){
              required
              />
            
-        </form>
+        </form >
+        <div className='buttons'>
         <CustomButton type="submit" > Sign in</CustomButton>
         <CustomButton 
-        onClick={signInWithGoogle} >{' '}Sign in with Google{' '}
+        onClick={signInWithGoogle} isGoogleSignIn>{' '}Sign in with Google{' '}
         </CustomButton>
         </div>
-    )
+        </div>
+        
+    );
 }
 
 }
