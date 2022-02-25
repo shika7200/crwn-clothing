@@ -34,10 +34,12 @@ componentDidMount(){
       userRef.onSnapshot(Snapshot => {
        this.setState({
          currentUser: {
+           displayName:Snapshot.displayName,
            id: Snapshot.id,
            ...Snapshot.data()
          }
        });
+       console.log(this.state); 
       }); 
       
     }
